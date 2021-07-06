@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "simplestruct"
+name = "easystruct"
 version = "0.1.0"
 description = "A Python library to make the usage of struct from the stdlib a little bit easier."
 authors = ["zocker_160 <zocker1600@posteo.net>"]
