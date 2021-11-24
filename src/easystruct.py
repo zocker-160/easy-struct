@@ -1,69 +1,68 @@
 #! /usr/bin/env python3
 
 import struct
-from _typeshed import ReadableBuffer, WriteableBuffer
 
 ##
 # reading
 ##
 
-def read_float_buff(buffer: ReadableBuffer, big_endian=False) -> bytes:
+def read_float_buff(buffer, big_endian=False) -> float:
     if big_endian:
         return struct.unpack(">f", buffer.read(4))[0]
     else:
         return struct.unpack("<f", buffer.read(4))[0]
 
-def read_double_buff(buffer: ReadableBuffer, big_endian=False) -> bytes:
+def read_double_buff(buffer, big_endian=False) -> float:
     if big_endian:
         return struct.unpack(">d", buffer.read(8))[0]
     else:
         return struct.unpack("<d", buffer.read(8))[0]
 
 
-def read_uint8_buff(buffer: ReadableBuffer, big_endian=False) -> bytes:
+def read_uint8_buff(buffer, big_endian=False) -> int:
     if big_endian:
         return struct.unpack(">B", buffer.read(1))[0]
     else:
         return struct.unpack("<B", buffer.read(1))[0]
 
-def read_uint16_buff(buffer: ReadableBuffer, big_endian=False) -> bytes:
+def read_uint16_buff(buffer, big_endian=False) -> int:
     if big_endian:
         return struct.unpack(">H", buffer.read(2))[0]
     else:
         return struct.unpack("<H", buffer.read(2))[0]
 
-def read_uint32_buff(buffer: ReadableBuffer, big_endian=False) -> bytes:
+def read_uint32_buff(buffer, big_endian=False) -> int:
     if big_endian:
         return struct.unpack(">I", buffer.read(4))[0]
     else:
         return struct.unpack("<I", buffer.read(4))[0]
 
-def read_uint64_buff(buffer: ReadableBuffer, big_endian=False) -> bytes:
+def read_uint64_buff(buffer, big_endian=False) -> int:
     if big_endian:
         return struct.unpack(">Q", buffer.read(8))[0]
     else:
         return struct.unpack("<Q", buffer.read(8))[0]
 
 
-def read_sint8_buff(buffer: ReadableBuffer, big_endian=False) -> bytes:
+def read_sint8_buff(buffer, big_endian=False) -> int:
     if big_endian:
         return struct.unpack(">b", buffer.read(1))[0]
     else:
         return struct.unpack("<b", buffer.read(1))[0]
 
-def read_sint16_buff(buffer: ReadableBuffer, big_endian=False) -> bytes:
+def read_sint16_buff(buffer, big_endian=False) -> int:
     if big_endian:
         return struct.unpack(">h", buffer.read(2))[0]
     else:
         return struct.unpack("<h", buffer.read(2))[0]
 
-def read_sint32_buff(buffer: ReadableBuffer, big_endian=False) -> bytes:
+def read_sint32_buff(buffer, big_endian=False) -> int:
     if big_endian:
         return struct.unpack(">i", buffer.read(4))[0]
     else:
         return struct.unpack("<i", buffer.read(4))[0]
 
-def read_sint64_buff(buffer: ReadableBuffer, big_endian=False) -> bytes:
+def read_sint64_buff(buffer, big_endian=False) -> int:
     if big_endian:
         return struct.unpack(">q", buffer.read(8))[0]
     else:
@@ -73,36 +72,36 @@ def read_sint64_buff(buffer: ReadableBuffer, big_endian=False) -> bytes:
 # writing
 ##
 
-def write_float_buff(buffer: WriteableBuffer, value: float, big_endian=False) -> None:
+def write_float_buff(buffer, value: float, big_endian=False) -> None:
     buffer.write(return_float_bytes(value, big_endian))
 
-def write_double_buff(buffer: WriteableBuffer, value: float, big_endian=False) -> None:
+def write_double_buff(buffer, value: float, big_endian=False) -> None:
     buffer.write(return_double_bytes(value, big_endian))
 
 
-def write_uint8_buff(buffer: WriteableBuffer, value: int, big_endian=False) -> None:
+def write_uint8_buff(buffer, value: int, big_endian=False) -> None:
     buffer.write(return_uint8_bytes(value, big_endian))
 
-def write_uint16_buff(buffer: WriteableBuffer, value: int, big_endian=False) -> None:
+def write_uint16_buff(buffer, value: int, big_endian=False) -> None:
     buffer.write(return_uint16_bytes(value, big_endian))
 
-def write_uint32_buff(buffer: WriteableBuffer, value: int, big_endian=False) -> None:
+def write_uint32_buff(buffer, value: int, big_endian=False) -> None:
     buffer.write(return_uint32_bytes(value, big_endian))
 
-def write_uint64_buff(buffer: WriteableBuffer, value: int, big_endian=False) -> None:
+def write_uint64_buff(buffer, value: int, big_endian=False) -> None:
     buffer.write(return_uint64_bytes(value, big_endian))
 
 
-def write_sint8_buff(buffer: WriteableBuffer, value: int, big_endian=False) -> None:
+def write_sint8_buff(buffer, value: int, big_endian=False) -> None:
     buffer.write(return_sint8_bytes(value, big_endian))
 
-def write_sint16_buff(buffer: WriteableBuffer, value: int, big_endian=False) -> None:
+def write_sint16_buff(buffer, value: int, big_endian=False) -> None:
     buffer.write(return_sint16_bytes(value, big_endian))
 
-def write_sint32_buff(buffer: WriteableBuffer, value: int, big_endian=False) -> None:
+def write_sint32_buff(buffer, value: int, big_endian=False) -> None:
     buffer.write(return_sint32_bytes(value, big_endian))
 
-def write_sint64_buff(buffer: WriteableBuffer, value: int, big_endian=False) -> None:
+def write_sint64_buff(buffer, value: int, big_endian=False) -> None:
     buffer.write(return_sint64_bytes(value, big_endian))
 
 ##
