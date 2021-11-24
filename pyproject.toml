@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "easystruct"
-version = "0.1.1"
+version = "0.1.2"
 description = "A Python library to make the usage of struct from the stdlib a little bit easier."
 authors = ["zocker_160 <zocker1600@posteo.net>"]
 license = "WTFPL"
